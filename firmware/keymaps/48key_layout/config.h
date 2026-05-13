@@ -7,4 +7,7 @@
 #define VIAL_UNLOCK_COMBO_ROWS { 0, 0 }
 #define VIAL_UNLOCK_COMBO_COLS { 0, 1 }
 #define NKRO_DEFAULT_ON true
-
+//#define MASTER_LEFT//
+//#define MASTER_RIGHT//
+//copy more folder and delete/  to make keybroard know left or right//
+//In QMK, the default master sides si left half if not defind master //
