@@ -3,21 +3,22 @@
 
 #include QMK_KEYBOARD_H
 
-enum polyglot_layers {
-    _STENODEF, 
-    _STENO,    
-    _QWERTY,
-    _NUMBER,
-    _SYMBOLS,
-    _QSTENO,   
+enum silakka48_polyglot_layers {
+    _STENODEF,               // default layout that similar with polyglot layout//
+    _STENO,                  // steno layout that prevent accidnetally prass key,  only have ESC and Enter for reset lesson//
+    _QWERTY,                 // QWERTY layout //
+    _NUMBER,                 //Number layer//
+    _SYMBOLS,                //Symbols layer//
+    _QSTENO,                 //steno layout but without protocol use on plover or Dotterel in Keybroad mode etc.//
     _V,
-    _VI,
-    _SWITCH,   
+    _VI,                     
+    _SWITCH,                //TO layout change see layoot below // 
 };
+
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-    // ................................................................ Stenography Def
+    // ................................................................ Stenography Default
     //
     //  LEFT SIDE                                     RIGHT SIDE
     //  ┌──────┬──────┬──────┬──────┬──────┬──────┐   ┌──────┬──────┬──────┬──────┬──────┬──────┐
@@ -25,16 +26,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //  ├──────┼──────┼──────┼──────┼──────┼──────┤   ├──────┼──────┼──────┼──────┼──────┼──────┤
     //  │  #2  │  S-  │  -K  │  -W  │  -R  │  *2  │   │  *4  │  R-  │  B-  │  G-  │  S-  │  Z-  │
     //  ├──────┼──────┼──────┼──────┼──────┼──────┤   ├──────┼──────┼──────┼──────┼──────┼──────┤
-    //  │  Esc │ Shift│ Ctrl │  Alt │  Win │ Space│   │ -Vol │      │      │  Up  │      │ +Vol │
+    //  │  Esc │ Shift│ Ctrl │  Alt │  Win │ Space│   │ -Vol │ Left │ Down │  Up  │ Right│ +Vol │
     //  ├──────┼──────┼──────┼──────┼──────┼──────┤   ├──────┼──────┼──────┼──────┼──────┼──────┤
-    //  │      │Switch│      │      │  -A  │  -O  │   │  E-  │  U-  │ Left │ Down │ Right│ Enter│
+    //  │      │      │Switch│      │  -A  │  -O  │   │  E-  │  U-  │      │      │      │ Enter│
     //  └──────┴──────┴──────┴──────┴──────┴──────┘   └──────┴──────┴──────┴──────┴──────┴──────┘
 
     [_STENODEF] = LAYOUT(
         STN_N1,  STN_S1,  STN_TL,  STN_PL,  STN_HL,  STN_ST1,      STN_ST3, STN_FR,  STN_PR,  STN_LR,  STN_TR,  STN_DR,
         STN_N2,  STN_S2,  STN_KL,  STN_WL,  STN_RL,  STN_ST2,      STN_ST4, STN_RR,  STN_BR,  STN_GR,  STN_SR,  STN_ZR,
-        KC_ESC,  KC_LSFT, KC_LCTL, KC_LALT, KC_LWIN, KC_SPC,       KC_VOLD, KC_TRNS, KC_TRNS, KC_UP,   KC_TRNS, KC_VOLU,
-        KC_TRNS, MO(_SWITCH), KC_TRNS, KC_TRNS, STN_A, STN_O,      STN_E,   STN_U,   KC_LEFT, KC_DOWN, KC_RGHT, KC_ENT,
+        KC_ESC,  KC_LSFT, KC_LCTL, KC_LALT, KC_LWIN, KC_SPC,       KC_VOLD, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_VOLU,
+        KC_TRNS, KC_TRNS, MO(_SWITCH), KC_TRNS, STN_A, STN_O,      STN_E,   STN_U,   KC_TRNS, KC_TRNS, KC_TRNS, KC_ENT,
                                    KC_TRNS, KC_TRNS, KC_TRNS,      KC_TRNS, KC_TRNS, KC_TRNS
     ),
 
@@ -48,14 +49,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //  ├──────┼──────┼──────┼──────┼──────┼──────┤   ├──────┼──────┼──────┼──────┼──────┼──────┤
     //  │ TRNS │ TRNS │ TRNS │ TRNS │ TRNS │ TRNS │   │ TRNS │ TRNS │ TRNS │ TRNS │ TRNS │ TRNS │
     //  ├──────┼──────┼──────┼──────┼──────┼──────┤   ├──────┼──────┼──────┼──────┼──────┼──────┤
-    //  │  Esc │Switch│ TRNS │ TRNS │  -A  │  -O  │   │  E-  │  U-  │ TRNS │ TRNS │ TRNS │ Enter│
+    //  │  Esc │      │Switch│      │  -A  │  -O  │   │  E-  │  U-  │ TRNS │ TRNS │ TRNS │ Enter│
     //  └──────┴──────┴──────┴──────┴──────┴──────┘   └──────┴──────┴──────┴──────┴──────┴──────┘
 
     [_STENO] = LAYOUT(
         STN_N1,  STN_S1,  STN_TL,  STN_PL,  STN_HL,  STN_ST1,      STN_ST3, STN_FR,  STN_PR,  STN_LR,  STN_TR,  STN_DR,
         STN_N2,  STN_S2,  STN_KL,  STN_WL,  STN_RL,  STN_ST2,      STN_ST4, STN_RR,  STN_BR,  STN_GR,  STN_SR,  STN_ZR,
         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,      KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-        KC_ESC,  MO(_SWITCH), KC_TRNS, KC_TRNS, STN_A, STN_O,      STN_E,   STN_U,   KC_TRNS, KC_TRNS, KC_TRNS, KC_ENT,
+        KC_ESC,  KC_TRNS, MO(_SWITCH), KC_TRNS, STN_A, STN_O,      STN_E,   STN_U,   KC_TRNS, KC_TRNS, KC_TRNS, KC_ENT,
                                    KC_TRNS, KC_TRNS, KC_TRNS,      KC_TRNS, KC_TRNS, KC_TRNS
     ),
 
@@ -69,14 +70,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //  ├──────┼──────┼──────┼──────┼──────┼──────┤   ├──────┼──────┼──────┼──────┼──────┼──────┤
     //  │StnDef│   Z  │   X  │   C  │   V  │   B  │   │   N  │   M  │   ,  │   .  │   /  │ Enter│
     //  ├──────┼──────┼──────┼──────┼──────┼──────┤   ├──────┼──────┼──────┼──────┼──────┼──────┤
-    //  │      │Switch│      │  GUI │ Num  │ Space│   │ Space│ Symb │ AltGr│      │      │      │
+    //  │      │      │Switch│  GUI │ Num  │ Space│   │ Space│ Symb │ AltGr│      │      │      │
     //  └──────┴──────┴──────┴──────┴──────┴──────┘   └──────┴──────┴──────┴──────┴──────┴──────┘
 
     [_QWERTY] = LAYOUT(
         KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,         KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
         KC_LCTL, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,         KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
         TO(_STENODEF), KC_Z, KC_X, KC_C,    KC_V,    KC_B,         KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_ENT,
-        KC_TRNS, MO(_SWITCH), KC_TRNS, KC_LGUI, MO(_NUMBER), KC_SPC, KC_SPC, MO(_SYMBOLS), KC_RALT, KC_TRNS, KC_TRNS, KC_TRNS,
+        KC_TRNS, KC_TRNS, MO(_SWITCH), KC_LGUI, MO(_NUMBER), KC_SPC, KC_SPC, MO(_SYMBOLS), KC_RALT, KC_TRNS, KC_TRNS, KC_TRNS,
                                    KC_TRNS, KC_TRNS, KC_TRNS,      KC_TRNS, KC_TRNS, KC_TRNS
     ),
 
@@ -86,15 +87,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //  ┌──────┬──────┬──────┬──────┬──────┬──────┐   ┌──────┬──────┬──────┬──────┬──────┬──────┐
     //  │      │   1  │   2  │   3  │   4  │   5  │   │   6  │   7  │   8  │   9  │   0  │ Bksp │
     //  ├──────┼──────┼──────┼──────┼──────┼──────┤   ├──────┼──────┼──────┼──────┼──────┼──────┤
-    //  │  Tab │      │      │  Up  │      │ Right│   │      │      │      │      │      │      │
+    //  │  Tab │      │ Left │ Down │  Up  │ Right│   │      │      │      │      │      │      │
     //  ├──────┼──────┼──────┼──────┼──────┼──────┤   ├──────┼──────┼──────┼──────┼──────┼──────┤
-    //  │      │  Del │ Left │ Down │ Right│      │   │      │      │      │      │      │      │
+    //  │      │      │ Del  │      │      │      │   │      │      │      │      │      │      │
     //  └──────┴──────┴──────┴──────┴──────┴──────┘   └──────┴──────┴──────┴──────┴──────┴──────┘
 
     [_NUMBER] = LAYOUT(
         KC_TRNS, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,         KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC,
-        KC_TAB,  KC_TRNS, KC_TRNS, KC_UP,   KC_TRNS, KC_RGHT,      KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-        KC_TRNS, KC_DEL,  KC_LEFT, KC_DOWN, KC_RGHT, KC_TRNS,      KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+        KC_TAB,  KC_TRNS, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,      KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+        KC_TRNS, KC_TRNS,  KC_DEL, KC_DOWN, KC_RGHT, KC_TRNS,      KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,      KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
                                    KC_TRNS, KC_TRNS, KC_TRNS,      KC_TRNS, KC_TRNS, KC_TRNS
     ),
@@ -103,7 +104,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //
     //  LEFT SIDE                                     RIGHT SIDE
     //  ┌──────┬──────┬──────┬──────┬──────┬──────┐   ┌──────┬──────┬──────┬──────┬──────┬──────┐
-    //  │      │   !  │   @  │   #  │   $  │   %  │   │   ^  │   &  │   * │   (  │   )  │ Bksp │
+    //  │      │   !  │   @  │   #  │   $  │   %  │   │   ^  │   &  │   *  │   (  │   )  │ Bksp │
     //  ├──────┼──────┼──────┼──────┼──────┼──────┤   ├──────┼──────┼──────┼──────┼──────┼──────┤
     //  │      │      │ Mute │ -Vol │ +Vol │      │   │   -  │   =  │   [  │   ]  │   \  │   `  │
     //  ├──────┼──────┼──────┼──────┼──────┼──────┤   ├──────┼──────┼──────┼──────┼──────┼──────┤
@@ -128,14 +129,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //  ├──────┼──────┼──────┼──────┼──────┼──────┤   ├──────┼──────┼──────┼──────┼──────┼──────┤
     //  │      │      │      │      │      │      │   │      │      │      │      │      │      │
     //  ├──────┼──────┼──────┼──────┼──────┼──────┤   ├──────┼──────┼──────┼──────┼──────┼──────┤
-    //  │      │Switch│      │      │   C  │   V  │   │   N  │   M  │      │      │      │      │
+    //  │      │      │Switch│      │   C  │   V  │   │   N  │   M  │      │      │      │      │
     //  └──────┴──────┴──────┴──────┴──────┴──────┘   └──────┴──────┴──────┴──────┴──────┴──────┘
 
     [_QSTENO] = LAYOUT(
         KC_1,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,         KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC,
         KC_2,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,         KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,      KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-        KC_TRNS, MO(_SWITCH), KC_TRNS, KC_TRNS, KC_C, KC_V,        KC_N,    KC_M,    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+        KC_TRNS, KC_TRNS, MO(_SWITCH), KC_TRNS, KC_C, KC_V,        KC_N,    KC_M,    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
                                    KC_TRNS, KC_TRNS, KC_TRNS,      KC_TRNS, KC_TRNS, KC_TRNS
     ),
 
@@ -165,15 +166,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //  ├──────┼──────┼──────┼──────┼──────┼──────┤   ├──────┼──────┼──────┼──────┼──────┼──────┤
     //  │StnDef│ Steno│      │      │      │      │   │      │      │      │      │      │      │
     //  ├──────┼──────┼──────┼──────┼──────┼──────┤   ├──────┼──────┼──────┼──────┼──────┼──────┤
-    //  │Qwerty│QSteno│      │      │      │      │   │      │      │      │      │      │      │
+    //  │QWERTY│QSteno│      │      │      │      │   │      │      │      │      │      │      │
     //  └──────┴──────┴──────┴──────┴──────┴──────┘   └──────┴──────┴──────┴──────┴──────┴──────┘
 
     [_SWITCH] = LAYOUT(
-        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,      KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-        TO(_STENODEF), TO(_STENO), KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-        TO(_QWERTY), TO(_QSTENO),  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,      KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-                                   KC_TRNS, KC_TRNS, KC_TRNS,      KC_TRNS, KC_TRNS, KC_TRNS
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,             KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+        TO(_STENODEF), TO(_STENO), KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+        TO(_QWERTY), TO(_QSTENO),  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,             KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+                                   KC_TRNS, KC_TRNS, KC_TRNS,              KC_TRNS, KC_TRNS, KC_TRNS
     ),
 };
 
