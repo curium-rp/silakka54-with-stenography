@@ -1,24 +1,29 @@
-# Silakka54
+    **default layout for 48 keymap**  see more layout and keymap inside keymap.c
 
-![Silakka54](https://i.imgur.com/JrsS0kY.png)
+    //  LEFT SIDE                                     RIGHT SIDE
+    //  ┌──────┬──────┬──────┬──────┬──────┬──────┐   ┌──────┬──────┬──────┬──────┬──────┬──────┐
+    //  │  #1  │  -S  │  -T  │  -P  │  -H  │  *1  │   │  *3  │  F-  │  P-  │  L-  │  T-  │  D-  │
+    //  ├──────┼──────┼──────┼──────┼──────┼──────┤   ├──────┼──────┼──────┼──────┼──────┼──────┤
+    //  │  #2  │  -S  │  -K  │  -W  │  -R  │  *2  │   │  *4  │  R-  │  B-  │  G-  │  S-  │  Z-  │
+    //  ├──────┼──────┼──────┼──────┼──────┼──────┤   ├──────┼──────┼──────┼──────┼──────┼──────┤
+    //  │  Esc │ Shift│ Ctrl │  Alt │  Win │ Space│   │ -Vol │ Left │ Down │  Up  │ Right│ +Vol │
+    //  ├──────┼──────┼──────┼──────┼──────┼──────┤   ├──────┼──────┼──────┼──────┼──────┼──────┤
+    //  │      │      │Switch│      │  -A  │  -O  │   │  E-  │  U-  │      │      │      │ Enter│
+    //  └──────┴──────┴──────┴──────┴──────┴──────┘   └──────┴──────┴──────┴──────┴──────┴──────┘
+    //                      │      │      │      │       │      │      │      │
+    //                      └──────┴──────┴──────┘       └──────┴──────┴──────┘
 
-Silakka54 is a RP2040 Zero based 54-key column staggered split keyboard. PCB uses hotswap sockets. Design is inspired from REVIUNG41 and Corne keyboards.
+   **default layout for full keymap**
 
-* Keyboard Maintainer: [Squalius-cephalus](https://github.com/Squalius-cephalus)
-* Hardware Supported: Silakka54 PCB
-* Hardware Availability: https://github.com/Squalius-cephalus/silakka54
-
-Make example for this keyboard (after setting up your vial build environment):
-
-    make silakka54:vial
-
-Flashing example for this keyboard:
-
-    make silakka54:vial:flash
-
-## Bootloader
-
-Enter the bootloader in 2 ways:
-
-* **Physical boot button**: Hold BOOT button down and connect MCU to the PC
-* **Keycode in layout**: Press the key mapped to `QK_BOOT` if it is available
+    //  LEFT SIDE                                       RIGHT SIDE
+    //  ┌──────┬──────┬──────┬──────┬──────┬──────┐     ┌──────┬──────┬──────┬──────┬──────┬──────┐
+    //  │      │  #1  │  #2  │  #3  │  #4  │  #A  │     │  #B  │  #6  │  #7  │  #8  │  #9  │  #C  │
+    //  ├──────┼──────┼──────┼──────┼──────┼──────┤     ├──────┼──────┼──────┼──────┼──────┼──────┤
+    //  │      │  -S  │  -T  │  -P  │  -H  │  *1  │     │  *3  │  -F  │  -P  │  -L  │  -T  │  -D  │
+    //  ├──────┼──────┼──────┼──────┼──────┼──────┤     ├──────┼──────┼──────┼──────┼──────┼──────┤
+    //  │      │  -S  │  -K  │  -W  │  -R  │  *2  │     │  *4  │  -R  │  -B  │  -G  │  -S  │  -Z  │
+    //  ├──────┼──────┼──────┼──────┼──────┼──────┤     ├──────┼──────┼──────┼──────┼──────┼──────┤
+    //  │  Esc │ Shift│ Ctrl │  Alt │  Win │ Space│     │ -Vol │ Left │ Down │  Up  │ Right│ +Vol │
+    //  └──────┴──────┴──────┴──────┴──────┴──────┘     └──────┴──────┴──────┴──────┴──────┴──────┘
+    //                      │Switch│  -A  │  -O  │       │  E-  │  U-  │ Enter│
+    //                      └──────┴──────┴──────┘       └──────┴──────┴──────┘
