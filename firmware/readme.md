@@ -1,4 +1,4 @@
-    **default layout for 48 keymap**  see more layout and keymap inside keymap.c
+   **default layout for 48 keymap**  see more layout and keymap inside keymap.c
 
     //  LEFT SIDE                                     RIGHT SIDE
     //  ┌──────┬──────┬──────┬──────┬──────┬──────┐   ┌──────┬──────┬──────┬──────┬──────┬──────┐
