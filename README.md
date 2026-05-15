@@ -17,3 +17,5 @@ NO Vial firmware supported when use stenograhpy PROTOCOL--.
 **Firmware Update https://github.com/Squalius-cephalus/silakka54/wiki/Firmware-Update**
 
 **Stenography in QMK https://docs.qmk.fm/features/stenography**
+
+qmk tutorial https://www.youtube.com/watch?v=AA8fw2MbpYg&t=49s
