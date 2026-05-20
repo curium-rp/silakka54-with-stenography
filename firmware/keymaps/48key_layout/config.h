@@ -10,4 +10,4 @@
 //#define MASTER_LEFT//
 //#define MASTER_RIGHT//
 //copy more folder and delete/  to make keybroard know left or right//
-//In QMK, the default master sides si left half if not defind master //
+//In QMK, the default master sides is left half, when didn't defind master //
