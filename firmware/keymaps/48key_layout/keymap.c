@@ -3,7 +3,7 @@
 
 #include QMK_KEYBOARD_H
 
-enum silakka48_polyglot_layers {
+enum silakka48_stenography_layers {
     _STENODEF,               // default layout that similar with polyglot layout//
     _GRAPHY,                  // steno layout that prevent accidnetally prass key,  only have ESC and Enter for reset lesson//
     _QWERTY,                 // QWERTY layout //
