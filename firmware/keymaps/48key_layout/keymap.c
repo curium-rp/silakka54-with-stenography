@@ -3,7 +3,7 @@
 
 #include QMK_KEYBOARD_H
 
-enum silakka48_stenography_layers {
+enum silakka48_polyglot_layers {
     _STENODEF,               // default layout that similar with polyglot layout//
     _GRAPHY,                  // steno layout that prevent accidnetally prass key,  only have ESC and Enter for reset lesson//
     _QWERTY,                 // QWERTY layout //
@@ -12,7 +12,7 @@ enum silakka48_stenography_layers {
     _QSTENO,                 //steno layout but without protocol use on plover or Dotterel in Keybroad mode etc.//
     _V,
     _VI,
-    _SWITCH,                //TO layout change see layoot below //
+    _SWITCH,                //TO POWER lost will go to default or PDF will last through a power loss  -layout change see layout below //
 };
 
 
@@ -74,11 +74,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //  └──────┴──────┴──────┴──────┴──────┴──────┘   └──────┴──────┴──────┴──────┴──────┴──────┘
 
     [_QWERTY] = LAYOUT(
-        KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,         KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
-        KC_LCTL, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,         KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
-        TO(_STENODEF), KC_Z, KC_X, KC_C,    KC_V,    KC_B,         KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_ENT,
-        XXXXXXX, XXXXXXX, MO(_SWITCH), KC_LGUI, MO(_NUMBER), KC_SPC, KC_SPC, MO(_SYMBOLS), KC_RALT, XXXXXXX, XXXXXXX, XXXXXXX,
-                                   XXXXXXX, XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX
+        KC_ESC,          KC_Q,    KC_W,       KC_E,    KC_R,    KC_T,         KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
+        KC_LCTL,         KC_A,    KC_S,       KC_D,    KC_F,    KC_G,         KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
+        TO(_STENODEF),   KC_Z,    KC_X,       KC_C,    KC_V,    KC_B,         KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_ENT,
+        TO(_GRAPHY),   XXXXXXX, MO(_SWITCH), KC_LGUI, MO(_NUMBER), KC_SPC,   KC_SPC, MO(_SYMBOLS), KC_RALT, XXXXXXX, XXXXXXX, XXXXXXX,
+                                        XXXXXXX, XXXXXXX, XXXXXXX,            XXXXXXX, XXXXXXX, XXXXXXX
     ),
 
     // ......................................................................... Number
@@ -170,11 +170,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //  └──────┴──────┴──────┴──────┴──────┴──────┘   └──────┴──────┴──────┴──────┴──────┴──────┘
 
     [_SWITCH] = LAYOUT(
-        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,           XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-        TO(_STENODEF), TO(_GRAPHY), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-        TO(_QWERTY), TO(_QSTENO),  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,           XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-                                   XXXXXXX, XXXXXXX, XXXXXXX,           XXXXXXX, XXXXXXX, XXXXXXX
+        XXXXXXX,        XXXXXXX,        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,           XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        PDF(_STENODEF), PDF(_GRAPHY),   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,           XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        PDF(_QWERTY),   PDF(_QSTENO),   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,           XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        XXXXXXX,        XXXXXXX,        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,           XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+                                                XXXXXXX, XXXXXXX, XXXXXXX,            XXXXXXX, XXXXXXX, XXXXXXX
     ),
 };
 
