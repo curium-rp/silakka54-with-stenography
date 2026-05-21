@@ -8,9 +8,11 @@ enum silakka54_stenography_layers {
     _GRAPHY,                  // steno layout but didn't have number bar
     _QWERTY,                 // default QWERTY layout
     _FNLAY,
+    _DFSIX,                   // clean version of STENOFEF - Layer one  only have switch key, ESC, and Enter left 
+    _GRCLQ,                   // clean version of GRAPHY   - Layer two  only have switch key, ESC, and Enter left 
     _V,
     _VI,
-    _SWITCH,                 // TO layout change see layout below
+    _SWITCH,                 // PDF layout change see layout below and will last through a power loss
 };
 
 
@@ -82,7 +84,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,           KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
         KC_LCTL, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,           KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
         KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,           KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
-                                   KC_LGUI, MO(_FNLAY), KC_SPC,   KC_ENT,  KC_RCTL, KC_RALT
+                              KC_LGUI, MO(_FNLAY), KC_SPC,          KC_ENT,  KC_RCTL, KC_RALT
     ),
 
     // ....................................................................... Function
@@ -103,10 +105,30 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_FNLAY] = LAYOUT(
         KC_GRV,              KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,        KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,
         XXXXXXX,             XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      KC_PGUP, KC_PGDN, KC_HOME, KC_END,  KC_DEL,  KC_F12,
-        TO(_STENODEF),       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_LBRC, KC_RBRC,
-        TO(_GRAPHY),          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        PDF(_STENODEF),    PDF(_DFSIX), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_LBRC, KC_RBRC,
+        PDF(_GRAPHY),      PDF(_GRCLQ), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
                                              XXXXXXX, XXXXXXX, XXXXXXX,          XXXXXXX, XXXXXXX, XXXXXXX
     ),
+
+
+    [_DFSIX] = LAYOUT(
+        XXXXXXX, STN_N1,  STN_N2,  STN_N3,  STN_N4,  STN_NA,       STN_NB,  STN_N6,  STN_N7,  STN_N8,  STN_N9,  STN_NC,
+        XXXXXXX, STN_S1,  STN_TL,  STN_PL,  STN_HL,  STN_ST1,      STN_ST3, STN_FR,  STN_PR,  STN_LR,  STN_TR,  STN_DR,
+        XXXXXXX,  STN_S2,  STN_KL,  STN_WL,  STN_RL,  STN_ST2,      STN_ST4, STN_RR,  STN_BR,  STN_GR,  STN_SR,  STN_ZR,
+        KC_ESC,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+                                   MO(_SWITCH), STN_A, STN_O,      STN_E,   STN_U,   KC_ENT
+    ),
+
+
+    [_GRCLQ] = LAYOUT(
+        STN_N1,  STN_S1,  STN_TL,  STN_PL,  STN_HL,  STN_ST1,      STN_ST3, STN_FR,  STN_PR,  STN_LR,  STN_TR,  STN_DR,
+        STN_N2,  STN_S2,  STN_KL,  STN_WL,  STN_RL,  STN_ST2,      STN_ST4, STN_RR,  STN_BR,  STN_GR,  STN_SR,  STN_ZR,
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        KC_ESC,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_ENT,
+                                   MO(_SWITCH), STN_A, STN_O,      STN_A,   STN_O,   XXXXXXX
+    ),
+
+
 
     // .............................................................................. V
     [_V] = LAYOUT(
@@ -134,19 +156,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //  ├──────┼──────┼──────┼──────┼──────┼──────┤   ├──────┼──────┼──────┼──────┼──────┼──────┤
     //  │      │      │      │      │      │      │   │      │      │      │      │      │      │
     //  ├──────┼──────┼──────┼──────┼──────┼──────┤   ├──────┼──────┼──────┼──────┼──────┼──────┤
-    //  │STDEF |      │      │      │      │      │   │      │      │      │      │      │      │
+    //  │STDEF │DFSIX │      │      │      │      │   │      │      │      │      │      │      │
     //  ├──────┼──────┼──────┼──────┼──────┼──────┤   ├──────┼──────┼──────┼──────┼──────┼──────┤
-    //  │STENO │      │      │      │      │      │   │      │      │      │      │      │      │
+    //  │STENO │GRCLQ │      │      │      │      │   │      │      │      │      │      │      │
     //  └──────┴──────┴──────┴──────┴──────┴──────┘   └──────┴──────┴──────┴──────┴──────┴──────┘
     //                      │      │      │      │     │      │      │      │
     //                      └──────┴──────┴──────┘     └──────┴──────┴──────┘
 
     [_SWITCH] = LAYOUT(
-        TO(_QWERTY),          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-        XXXXXXX,             XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-        TO(_STENODEF),       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-        TO(_GRAPHY),          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-                                         XXXXXXX, XXXXXXX, XXXXXXX,            XXXXXXX, XXXXXXX, XXXXXXX
+        PDF(_QWERTY),       XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        XXXXXXX,            XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        PDF(_STENODEF),     PDF(_DFSIX), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        PDF(_GRAPHY),       PDF(_GRCLQ), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+                                                  XXXXXXX, XXXXXXX, XXXXXXX,       XXXXXXX, XXXXXXX, XXXXXXX
     ),
 };
 
