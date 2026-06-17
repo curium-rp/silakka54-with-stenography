@@ -9,6 +9,8 @@ NO Vial firmware supported when use stenograhpy PROTOCOL--.
 
 48 layout mean cut 6 key below out. You can see layout in code keymap.c
 
+It for someone that didn't live in South American or has more chaper choice.
+
 
 **For more information visit https://github.com/Squalius-cephalus/silakka54/wiki**
 
