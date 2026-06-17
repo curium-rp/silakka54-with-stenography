@@ -18,4 +18,4 @@ NO Vial firmware supported when use stenograhpy PROTOCOL--.
 
 **Stenography in QMK https://docs.qmk.fm/features/stenography**
 
-qmk tutorial https://www.youtube.com/watch?v=AA8fw2MbpYg&t=49s
+**qmk tutorial https://www.youtube.com/watch?v=AA8fw2MbpYg&t=49s**
