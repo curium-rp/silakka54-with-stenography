@@ -8,11 +8,11 @@ enum silakka54_stenography_layers {
     _GRAPHY,                  // steno layout but didn't have number bar
     _QWERTY,                 // default QWERTY layout
     _FNLAY,
-    _DFSIX,                   // clean version of STENOFEF - Layer one  only have switch key, ESC, and Enter left 
-    _GRCLQ,                   // clean version of GRAPHY   - Layer two  only have switch key, ESC, and Enter left 
+    _DFSIX,                   // clean version of STENOFEF - Layer one  only have switch key, ESC, and Enter left
+    _GRCLQ,                   // clean version of GRAPHY   - Layer two  only have switch key, ESC, and Enter left
     _V,
     _VI,
-    _SWITCH,                 // PDF layout change see layout below and will last through a power loss
+    _SWITCH,
 };
 
 
@@ -105,8 +105,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_FNLAY] = LAYOUT(
         KC_GRV,              KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,        KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,
         XXXXXXX,             XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      KC_PGUP, KC_PGDN, KC_HOME, KC_END,  KC_DEL,  KC_F12,
-        PDF(_STENODEF),    PDF(_DFSIX), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_LBRC, KC_RBRC,
-        PDF(_GRAPHY),      PDF(_GRCLQ), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        TO(_STENODEF),    TO(_DFSIX), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_LBRC, KC_RBRC,
+        TO(_GRAPHY),      TO(_GRCLQ), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
                                              XXXXXXX, XXXXXXX, XXXXXXX,          XXXXXXX, XXXXXXX, XXXXXXX
     ),
 
@@ -164,10 +164,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //                      └──────┴──────┴──────┘     └──────┴──────┴──────┘
 
     [_SWITCH] = LAYOUT(
-        PDF(_QWERTY),       XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        TO(_QWERTY),       XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
         XXXXXXX,            XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-        PDF(_STENODEF),     PDF(_DFSIX), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-        PDF(_GRAPHY),       PDF(_GRCLQ), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        TO(_STENODEF),     TO(_DFSIX), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        TO(_GRAPHY),       TO(_GRCLQ), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
                                                   XXXXXXX, XXXXXXX, XXXXXXX,       XXXXXXX, XXXXXXX, XXXXXXX
     ),
 };
