@@ -34,11 +34,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //                      └──────┴──────┴──────┘     └──────┴──────┴──────┘
 
     [_STENODEF] = LAYOUT(
-        XXXXXXX, STN_N1,  STN_N2,  STN_N3,  STN_N4,  STN_NA,       STN_NB,  STN_N6,  STN_N7,  STN_N8,  STN_N9,  STN_NC,
-        XXXXXXX, STN_S1,  STN_TL,  STN_PL,  STN_HL,  STN_ST1,      STN_ST3, STN_FR,  STN_PR,  STN_LR,  STN_TR,  STN_DR,
-        XXXXXXX,  STN_S2,  STN_KL,  STN_WL,  STN_RL,  STN_ST2,      STN_ST4, STN_RR,  STN_BR,  STN_GR,  STN_SR,  STN_ZR,
+        XXXXXXX, ST_N1,  ST_N2,  ST_N3,  ST_N4,  ST_NA,       ST_NB,  ST_N6,  ST_N7,  ST_N8,  ST_N9,  ST_NC,
+        XXXXXXX, ST_S1,  ST_TL,  ST_PL,  ST_HL,  ST_ST1,      ST_ST3, ST_FR,  ST_PR,  ST_LR,  ST_TR,  ST_DR,
+        XXXXXXX,  ST_S2,  ST_KL,  ST_WL,  ST_RL,  ST_ST2,      ST_ST4, ST_RR,  ST_BR,  ST_GR,  ST_SR,  ST_ZR,
         KC_ESC,  KC_LSFT, KC_LCTL, KC_LALT, KC_LWIN, KC_SPC,       KC_VOLD, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_VOLU,
-                                   MO(_SWITCH), STN_A, STN_O,      STN_E,   STN_U,   KC_ENT
+                                   MO(_SWITCH), ST_A, ST_O,      ST_E,   ST_U,   KC_ENT
     ),
 
     // .......................................................................... Steno
@@ -57,11 +57,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //                      └──────┴──────┴──────┘     └──────┴──────┴──────┘
 
     [_GRAPHY] = LAYOUT(
-        STN_N1,  STN_S1,  STN_TL,  STN_PL,  STN_HL,  STN_ST1,      STN_ST3, STN_FR,  STN_PR,  STN_LR,  STN_TR,  STN_DR,
-        STN_N2,  STN_S2,  STN_KL,  STN_WL,  STN_RL,  STN_ST2,      STN_ST4, STN_RR,  STN_BR,  STN_GR,  STN_SR,  STN_ZR,
+        ST_N1,  ST_S1,  ST_TL,  ST_PL,  ST_HL,  ST_ST1,      ST_ST3, ST_FR,  ST_PR,  ST_LR,  ST_TR,  ST_DR,
+        ST_N2,  ST_S2,  ST_KL,  ST_WL,  ST_RL,  ST_ST2,      ST_ST4, ST_RR,  ST_BR,  ST_GR,  ST_SR,  ST_ZR,
         XXXXXXX, KC_LSFT, KC_LCTL, KC_LALT, KC_LWIN, KC_SPC,       KC_VOLD, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_VOLU,
         KC_ESC,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_ENT,
-                                   MO(_SWITCH), STN_A, STN_O,      STN_A,   STN_O,   XXXXXXX
+                                   MO(_SWITCH), ST_A, ST_O,      ST_A,   ST_O,   XXXXXXX
     ),
 
     // ......................................................................... Qwerty
@@ -95,7 +95,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //  ├──────┼──────┼──────┼──────┼──────┼──────┤   ├──────┼──────┼──────┼──────┼──────┼──────┤
     //  │      │      │      │      │      │      │   │ PgUp │ PgDn │ Home │  End │  Del │  F12 │
     //  ├──────┼──────┼──────┼──────┼──────┼──────┤   ├──────┼──────┼──────┼──────┼──────┼──────┤
-    //  │StnDef│      │      │      │      │      │   │ Left │ Down │  Up  │ Right│   [  │   ]  │
+    //  │STDef│      │      │      │      │      │   │ Left │ Down │  Up  │ Right│   [  │   ]  │
     //  ├──────┼──────┼──────┼──────┼──────┼──────┤   ├──────┼──────┼──────┼──────┼──────┼──────┤
     //  │Steno │      │      │      │      │      │   │      │      │      │      │      │      │
     //  └──────┴──────┴──────┴──────┴──────┴──────┘   └──────┴──────┴──────┴──────┴──────┴──────┘
@@ -112,20 +112,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
     [_DFSIX] = LAYOUT(
-        XXXXXXX, STN_N1,  STN_N2,  STN_N3,  STN_N4,  STN_NA,       STN_NB,  STN_N6,  STN_N7,  STN_N8,  STN_N9,  STN_NC,
-        XXXXXXX, STN_S1,  STN_TL,  STN_PL,  STN_HL,  STN_ST1,      STN_ST3, STN_FR,  STN_PR,  STN_LR,  STN_TR,  STN_DR,
-        XXXXXXX,  STN_S2,  STN_KL,  STN_WL,  STN_RL,  STN_ST2,      STN_ST4, STN_RR,  STN_BR,  STN_GR,  STN_SR,  STN_ZR,
+        XXXXXXX, ST_N1,  ST_N2,  ST_N3,  ST_N4,  ST_NA,       ST_NB,  ST_N6,  ST_N7,  ST_N8,  ST_N9,  ST_NC,
+        XXXXXXX, ST_S1,  ST_TL,  ST_PL,  ST_HL,  ST_ST1,      ST_ST3, ST_FR,  ST_PR,  ST_LR,  ST_TR,  ST_DR,
+        XXXXXXX,  ST_S2,  ST_KL,  ST_WL,  ST_RL,  ST_ST2,      ST_ST4, ST_RR,  ST_BR,  ST_GR,  ST_SR,  ST_ZR,
         KC_ESC,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-                                   MO(_SWITCH), STN_A, STN_O,      STN_E,   STN_U,   KC_ENT
+                                   MO(_SWITCH), ST_A, ST_O,      ST_E,   ST_U,   KC_ENT
     ),
 
 
     [_GRCLQ] = LAYOUT(
-        STN_N1,  STN_S1,  STN_TL,  STN_PL,  STN_HL,  STN_ST1,      STN_ST3, STN_FR,  STN_PR,  STN_LR,  STN_TR,  STN_DR,
-        STN_N2,  STN_S2,  STN_KL,  STN_WL,  STN_RL,  STN_ST2,      STN_ST4, STN_RR,  STN_BR,  STN_GR,  STN_SR,  STN_ZR,
+        ST_N1,  ST_S1,  ST_TL,  ST_PL,  ST_HL,  ST_ST1,      ST_ST3, ST_FR,  ST_PR,  ST_LR,  ST_TR,  ST_DR,
+        ST_N2,  ST_S2,  ST_KL,  ST_WL,  ST_RL,  ST_ST2,      ST_ST4, ST_RR,  ST_BR,  ST_GR,  ST_SR,  ST_ZR,
         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
         KC_ESC,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_ENT,
-                                   MO(_SWITCH), STN_A, STN_O,      STN_A,   STN_O,   XXXXXXX
+                                   MO(_SWITCH), ST_A, ST_O,      ST_A,   ST_O,   XXXXXXX
     ),
 
 

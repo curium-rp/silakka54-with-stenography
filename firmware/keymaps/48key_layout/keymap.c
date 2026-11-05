@@ -32,10 +32,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //  └──────┴──────┴──────┴──────┴──────┴──────┘   └──────┴──────┴──────┴──────┴──────┴──────┘
 
     [_STENODEF] = LAYOUT(
-        STN_N1,  STN_S1,  STN_TL,  STN_PL,  STN_HL,  STN_ST1,      STN_ST3, STN_FR,  STN_PR,  STN_LR,  STN_TR,  STN_DR,
-        STN_N2,  STN_S2,  STN_KL,  STN_WL,  STN_RL,  STN_ST2,      STN_ST4, STN_RR,  STN_BR,  STN_GR,  STN_SR,  STN_ZR,
+        ST_N1,  ST_S1,  ST_TL,  ST_PL,  ST_HL,  ST_ST1,      ST_ST3, ST_FR,  ST_PR,  ST_LR,  ST_TR,  ST_DR,
+        ST_N2,  ST_S2,  ST_KL,  ST_WL,  ST_RL,  ST_ST2,      ST_ST4, ST_RR,  ST_BR,  ST_GR,  ST_SR,  ST_ZR,
         KC_ESC,  KC_LSFT, KC_LCTL, KC_LALT, KC_LWIN, KC_SPC,       KC_VOLD, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_VOLU,
-        XXXXXXX, XXXXXXX, MO(_SWITCH), XXXXXXX, STN_A, STN_O,      STN_E,   STN_U,   XXXXXXX, XXXXXXX, XXXXXXX, KC_ENT,
+        XXXXXXX, XXXXXXX, MO(_SWITCH), XXXXXXX, ST_A, ST_O,      ST_E,   ST_U,   XXXXXXX, XXXXXXX, XXXXXXX, KC_ENT,
                                    XXXXXXX, XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX
     ),
 
@@ -53,10 +53,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //  └──────┴──────┴──────┴──────┴──────┴──────┘   └──────┴──────┴──────┴──────┴──────┴──────┘
 
     [_GRAPHY] = LAYOUT(
-        STN_N1,  STN_S1,  STN_TL,  STN_PL,  STN_HL,  STN_ST1,      STN_ST3, STN_FR,  STN_PR,  STN_LR,  STN_TR,  STN_DR,
-        STN_N2,  STN_S2,  STN_KL,  STN_WL,  STN_RL,  STN_ST2,      STN_ST4, STN_RR,  STN_BR,  STN_GR,  STN_SR,  STN_ZR,
+        ST_N1,  ST_S1,  ST_TL,  ST_PL,  ST_HL,  ST_ST1,      ST_ST3, ST_FR,  ST_PR,  ST_LR,  ST_TR,  ST_DR,
+        ST_N2,  ST_S2,  ST_KL,  ST_WL,  ST_RL,  ST_ST2,      ST_ST4, ST_RR,  ST_BR,  ST_GR,  ST_SR,  ST_ZR,
         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-        KC_ESC,  XXXXXXX, MO(_SWITCH), XXXXXXX, STN_A, STN_O,      STN_E,   STN_U,   XXXXXXX, XXXXXXX, XXXXXXX, KC_ENT,
+        KC_ESC,  XXXXXXX, MO(_SWITCH), XXXXXXX, ST_A, ST_O,      ST_E,   ST_U,   XXXXXXX, XXXXXXX, XXXXXXX, KC_ENT,
                                    XXXXXXX, XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX
     ),
 
@@ -68,7 +68,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //  ├──────┼──────┼──────┼──────┼──────┼──────┤   ├──────┼──────┼──────┼──────┼──────┼──────┤
     //  │ Ctrl │   A  │   S  │   D  │   F  │   G  │   │   H  │   J  │   K  │   L  │   ;  │   '  │
     //  ├──────┼──────┼──────┼──────┼──────┼──────┤   ├──────┼──────┼──────┼──────┼──────┼──────┤
-    //  │StnDef│   Z  │   X  │   C  │   V  │   B  │   │   N  │   M  │   ,  │   .  │   /  │ Enter│
+    //  │STDef│   Z  │   X  │   C  │   V  │   B  │   │   N  │   M  │   ,  │   .  │   /  │ Enter│
     //  ├──────┼──────┼──────┼──────┼──────┼──────┤   ├──────┼──────┼──────┼──────┼──────┼──────┤
     //  │      │      │Switch│  GUI │ Num  │ Space│   │ Space│ Symb │ AltGr│      │      │      │
     //  └──────┴──────┴──────┴──────┴──────┴──────┘   └──────┴──────┴──────┴──────┴──────┴──────┘
@@ -164,7 +164,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //  ┌──────┬──────┬──────┬──────┬──────┬──────┐   ┌──────┬──────┬──────┬──────┬──────┬──────┐
     //  │      │      │      │      │      │      │   │      │      │      │      │      │      │
     //  ├──────┼──────┼──────┼──────┼──────┼──────┤   ├──────┼──────┼──────┼──────┼──────┼──────┤
-    //  │StnDef│ Steno│      │      │      │      │   │      │      │      │      │      │      │
+    //  │STDef│ Steno│      │      │      │      │   │      │      │      │      │      │      │
     //  ├──────┼──────┼──────┼──────┼──────┼──────┤   ├──────┼──────┼──────┼──────┼──────┼──────┤
     //  │QWERTY│QSteno│      │      │      │      │   │      │      │      │      │      │      │
     //  └──────┴──────┴──────┴──────┴──────┴──────┘   └──────┴──────┴──────┴──────┴──────┴──────┘
